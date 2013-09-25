@@ -1,0 +1,17 @@
+This project aims to fetch the calendar for a given course's classes and export it in iCal format.
+
+Launch the script with a resource code and it will output the calendar with all courses.
+
+For the script to work, you will need the following libraries:
+icalendar: http://pypi.python.org/pypi/icalendar/
+pytz: http://pypi.python.org/pypi/pytz/
+
+------------------
+
+Le but de ce projet est de récupérer le listage des cours d'une classe et de l'exporter au format iCal.
+
+Lancez le script avec un code de ressource et il retournera le calendrier avec les cours.
+
+Pour que le script fonctionne, il vous faudra les bibliothèques suivantes:
+icalendar: http://pypi.python.org/pypi/icalendar/
+pytz: http://pypi.python.org/pypi/pytz/
