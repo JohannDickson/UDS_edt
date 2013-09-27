@@ -38,6 +38,15 @@ def exportCal(resourceCode):
         ev.add('dtend', datetime(date.year,date.month,date.day,int(evEndH),int(evEndM),0,tzinfo=pytz.timezone("Europe/Paris")))
         ev.add("summary", evName)
 
+        evDescription = ""
+        eventResources = event.getElementsByTagName("resource")
+        for resource in eventResources:
+            rCategory = resource.getAttributeNode("category").nodeValue
+            if rCategory != "trainee":
+                rName = resource.getAttributeNode("name").nodeValue
+                evDescription += "%s\n" % (rName)
+        ev.add("description", evDescription)
+
         cal.add_component(ev)
 
     f = open("%s/%s.ics" % (calDest, resourceCode), "wb")
