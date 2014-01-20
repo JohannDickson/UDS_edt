@@ -42,8 +42,10 @@ def exportCal(resourceCode):
         eventResources = event.getElementsByTagName("resource")
         for resource in eventResources:
             rCategory = resource.getAttributeNode("category").nodeValue
-            if rCategory != "trainee":
-                rName = resource.getAttributeNode("name").nodeValue
+            rName = resource.getAttributeNode("name").nodeValue
+            if rCategory == "classroom":
+                ev.add('location', rName)
+            elif rCategory != "trainee":
                 evDescription += "%s\n" % (rName)
         ev.add("description", evDescription)
 
